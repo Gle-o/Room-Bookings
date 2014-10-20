@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.glenoir.plugins.model.Equipment">
+		<field name="uuid" type="String" />
+		<field name="equipmentId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="equipmentTypeId" type="long" />
+		<field name="name" type="String" localized="true" />
+		<field name="reference" type="String" />
+	</model>
+	<model name="com.glenoir.plugins.model.EquipmentType">
+		<field name="uuid" type="String" />
+		<field name="equipmentTypeId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true" />
+	</model>
+	<model name="com.glenoir.plugins.model.Room">
+		<field name="uuid" type="String" />
+		<field name="roomId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true" />
+		<field name="description" type="String" localized="true" />
+		<field name="capacity" type="int" />
+		<field name="level" type="int" />
+	</model>
+	<model name="com.glenoir.plugins.model.RoomBooking">
+		<field name="uuid" type="String" />
+		<field name="roomBookingId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="roomId" type="long" />
+		<field name="title" type="String" localized="true" />
+		<field name="description" type="String" localized="true" />
+		<field name="startTime" type="long" />
+		<field name="endTime" type="long" />
+		<field name="allDay" type="boolean" />
+		<field name="recurrence" type="String" />
+		<field name="firstReminder" type="long" />
+		<field name="firstReminderType" type="String" />
+		<field name="secondReminder" type="long" />
+		<field name="secondReminderType" type="String" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+	</model>
+</model-hints>
