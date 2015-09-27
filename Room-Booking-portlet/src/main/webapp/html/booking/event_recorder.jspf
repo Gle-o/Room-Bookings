@@ -1,0 +1,105 @@
+<script id="<portlet:namespace />eventRecorderHeaderTpl" type="text/x-alloy-template">
+	<div class="room-portlet-event-recorder">
+		<div class="scheduler-event-recorder-header">
+			<%--<tpl if="values.permissions.MANAGE_BOOKINGS">--%>
+			<tpl if="true">
+				<input class="scheduler-event-recorder-content" name="content" value="{content}" />
+			</tpl>
+
+			<%--<tpl if="!values.permissions.MANAGE_BOOKINGS">--%>
+			<tpl if="true">
+				<input name="content" type="hidden" value="{content}" />
+
+				<div class="scheduler-event-recorder-content">{content}</div>
+			</tpl>
+		</div>
+	</div>
+</script>
+
+<script id="<portlet:namespace />eventRecorderBodyTpl" type="text/x-alloy-template">
+	<div class="room-portlet-event-recorder">
+		<input name="instanceIndex" type="hidden" value="{instanceIndex}" />
+		<input name="allDay" type="hidden" value="{allDay}" />
+		<input name="startTime" type="hidden" value="{startTime}" />
+		<input name="endTime" type="hidden" value="{endTime}" />
+
+		<div class="scheduler-event-recorder-body">
+			<table>
+				<%--<tpl if="values.permissions.MANAGE_BOOKINGS && (status != Liferay.CalendarWorkflow.STATUS_DRAFT)">--%>
+				<tpl if="true">
+					<tr class="room-portlet-event-recorder-status-row">
+						<td>
+							<liferay-ui:message key="attend" />?
+						</td>
+						<td>
+							<a class="room-event-answer room-event-answer-{acceptLinkEnabled}" data-status="{workflowStatus.STATUS_APPROVED}" href="javascript:void(0);"><liferay-ui:message key="yes" /></a>
+
+							&mdash;
+
+							<a class="room-event-answer room-event-answer-{maybeLinkEnabled}" data-status="{workflowStatus.STATUS_MAYBE}" href="javascript:void(0);"><liferay-ui:message key="maybe" /></a>
+
+							&mdash;
+
+							<a class="room-event-answer room-event-answer-{declineLinkEnabled}" data-status="{workflowStatus.STATUS_DENIED}" href="javascript:void(0);"><liferay-ui:message key="no" /></a>
+						</td>
+					</tr>
+				</tpl>
+				<tr>
+					<td>
+						<liferay-ui:message key="when" />:
+					</td>
+					<td>
+						<label class="scheduler-event-recorder-date">{date}</label>
+					</td>
+				</tr>
+
+				<tr class="room-portlet-event-recorder-room-row">
+					<td>
+						<liferay-ui:message key="room" />:
+					</td>
+					<td>
+						<%--<tpl if="values.permissions.MANAGE_BOOKINGS">--%>
+						<tpl if="true">
+							<select id="<portlet:namespace />eventRecorderCalendar" name="roomId">
+								<tpl for="roomIds">
+									<tpl for="parent.availableRooms[values]">
+										<%--<tpl if="values.get('permissions').MANAGE_BOOKINGS == true">--%>
+										<tpl if="true">
+											<option value="{[values.get('roomId')]}">
+												{[LString.escapeHTML(Liferay.RoomUtil.getRoomName(values.get('name'), values.get('roomResourceName')))]}
+											</option>
+										</tpl>
+									</tpl>
+								</tpl>
+							</select>
+						</tpl>
+						<%--<tpl if="!values.permissions.MANAGE_BOOKINGS">--%>
+						<tpl if="false">
+							<label>{[LString.escapeHTML(Liferay.RoomUtil.getRoomName(values.room.get('name'), values.calendar.get('calendarResourceName')))]}</label>
+						</tpl>
+					</td>
+				</tr>
+
+				<%--<tpl if="values.editing && values.permissions.VIEW_BOOKING_DETAILS">--%>
+				<tpl if="true">
+					<tr id="<portlet:namespace />eventRecorderUsers">
+						<td>
+							<liferay-ui:message key="users" />:
+						</td>
+						<td>
+							<label class="room-portlet-invitees"><liferay-ui:message key="loading" /></label>
+						</td>
+					</tr>
+					<tr id="<portlet:namespace />eventRecorderResources">
+						<td>
+							<liferay-ui:message key="resources" />:
+						</td>
+						<td>
+							<label class="room-portlet-invitees"><liferay-ui:message key="loading" /></label>
+						</td>
+					</tr>
+				</tpl>
+			</table>
+		</div>
+	</div>
+</script>

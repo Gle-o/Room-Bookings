@@ -8,11 +8,9 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.glenoir.plugins</groupId>
 	<artifactId>Room-Booking-portlet-service</artifactId>
 	<packaging>jar</packaging>
 	<name>Room-Booking Portlet Service</name>
-	<version>6.2.0.01</version>
 	<build>
 		<plugins>
 			<plugin>

@@ -7,16 +7,184 @@
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/view.jsp</value>
+			<value>/html/room_booking/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+        <resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
 			<title>Room-Booking</title>
 			<short-title>Room-Booking</short-title>
 			<keywords>Room-Booking</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>equipement-type</portlet-name>
+		<display-name>Equipement Type</display-name>
+		<portlet-class>
+			com.zenixia.plugins.portlet.EquipementTypePortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/equipment_type/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Equipement Type</title>
+			<short-title>Equipement Type</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>equipement</portlet-name>
+		<display-name>Equipement</display-name>
+		<portlet-class>
+			com.zenixia.plugins.portlet.EquipmentPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/equipment/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Equipement</title>
+			<short-title>Equipement</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>room</portlet-name>
+		<display-name>Room</display-name>
+		<portlet-class>
+			com.zenixia.plugins.portlet.RoomPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/rooms/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Room</title>
+			<short-title>Room</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>management</portlet-name>
+		<display-name>Management</display-name>
+		<portlet-class>
+			com.zenixia.plugins.portlet.ManagementPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/management/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Management</title>
+			<short-title>Management</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>booking</portlet-name>
+		<display-name>Booking</display-name>
+		<portlet-class>com.zenixia.plugins.portlet.BookingPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/booking/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Booking</title>
+			<short-title>Booking</short-title>
+			<keywords></keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>

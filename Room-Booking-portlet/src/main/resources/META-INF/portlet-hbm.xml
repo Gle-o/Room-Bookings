@@ -2,45 +2,49 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
-	<import class="com.glenoir.plugins.model.Equipment" />
-	<import class="com.glenoir.plugins.model.EquipmentType" />
-	<import class="com.glenoir.plugins.model.Room" />
-	<import class="com.glenoir.plugins.model.RoomBooking" />
-	<class name="com.glenoir.plugins.model.impl.EquipmentImpl" table="RoomBooking_Equipment">
+	<import class="com.zenixia.plugins.model.Equipment" />
+	<import class="com.zenixia.plugins.model.EquipmentType" />
+	<import class="com.zenixia.plugins.model.Room" />
+	<import class="com.zenixia.plugins.model.RoomBooking" />
+	<class name="com.zenixia.plugins.model.impl.EquipmentImpl" table="RoomBooking_Equipment">
 		<cache usage="read-write" />
 		<id name="equipmentId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
-		<property name="equipmentTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="reference" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="equipmentTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="roomId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
-	<class name="com.glenoir.plugins.model.impl.EquipmentTypeImpl" table="RoomBooking_EquipmentType">
+	<class name="com.zenixia.plugins.model.impl.EquipmentTypeImpl" table="RoomBooking_EquipmentType">
 		<cache usage="read-write" />
 		<id name="equipmentTypeId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="com.glenoir.plugins.model.impl.RoomImpl" table="RoomBooking_Room">
+	<class name="com.zenixia.plugins.model.impl.RoomImpl" table="RoomBooking_Room">
 		<cache usage="read-write" />
 		<id name="roomId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
@@ -50,7 +54,7 @@
 		<property name="capacity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="level" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
-	<class name="com.glenoir.plugins.model.impl.RoomBookingImpl" table="RoomBooking_RoomBooking">
+	<class name="com.zenixia.plugins.model.impl.RoomBookingImpl" table="RoomBooking_RoomBooking">
 		<cache usage="read-write" />
 		<id name="roomBookingId" type="long">
 			<generator class="assigned" />
@@ -63,6 +67,7 @@
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="roomId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="vEventUid" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="startTime" type="com.liferay.portal.dao.orm.hibernate.LongType" />

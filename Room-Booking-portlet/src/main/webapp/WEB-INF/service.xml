@@ -1,7 +1,7 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
 
-<service-builder package-path="com.glenoir.plugins">
-	<author>guillaume Lenoir</author>
+<service-builder package-path="com.zenixia.plugins">
+	<author>Guillaume Lenoir</author>
 	<namespace>RoomBooking</namespace>
 	
 	<entity name="RoomBooking" uuid="true" local-service="true" remote-service="true">
@@ -21,6 +21,7 @@
 		<column name="roomId" type="long" />
 		
 		<!-- Other fields -->
+		<column name="vEventUid" type="String" />
 		
 		<column name="title" type="String" localized="true"/>
 		<column name="description" type="String" localized="true"></column>
@@ -68,15 +69,16 @@
 		<!-- Foreign key columns -->
 
 		<column name="companyId" type="long" />
-		<column name="userId" type="long"></column>
-		<column name="userName" type="String"></column>
+		<column name="groupId" type="long"/>
+		<column name="userId" type="long"/>
+		<column name="userName" type="String"/>
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
 		
 		<!-- Other fields -->
 		
 		<column name="name" type="String" localized="true"/>
-		<column name="description" type="String" localized="true"></column>
+		<column name="description" type="String" localized="true"/>
 		<column name="capacity" type="int"/>
 		<column name="level" type="int"/>
 		
@@ -86,6 +88,9 @@
 		</order>
 
 		<!-- Finder methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
 
 	</entity>
 
@@ -98,16 +103,19 @@
 		<!-- Foreign key columns -->
 
 		<column name="companyId" type="long" />
-		<column name="userId" type="long"></column>
-		<column name="userName" type="String"></column>
+		<column name="groupId" type="long"/>
+		<column name="userId" type="long"/>
+		<column name="userName" type="String"/>
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
-		<column name="equipmentTypeId" type="long" />
 		
 		<!-- Other fields -->
 		
 		<column name="name" type="String" localized="true"/>
 		<column name="reference" type="String" />
+		<column name="equipmentTypeId" type="long" />
+		
+		<column name="roomId" type="long" />
 		
 		<!-- Order -->
 		<order by="asc">
@@ -115,7 +123,34 @@
 		</order>
 
 		<!-- Finder methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
 
+		<finder name="EquipmentTypeId" return-type="Collection">
+			<finder-column name="equipmentTypeId" />
+		</finder>
+		
+		<finder name="RoomId" return-type="Collection">
+			<finder-column name="roomId" />
+		</finder>
+		
+		<finder name="GroupIdEquipmentTypeId" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="equipmentTypeId" />
+		</finder>
+						
+		<finder name="GroupIdEquipmentTypeIdRoomId" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="equipmentTypeId" />
+			<finder-column name="roomId" />
+		</finder>
+		
+		<finder name="RoomIdEquipmentTypeId" return-type="Collection">
+			<finder-column name="roomId" />
+			<finder-column name="equipmentTypeId" />
+		</finder>
+		
 	</entity>
 	
 	<entity name="EquipmentType" uuid="true" local-service="true" remote-service="true">
@@ -127,13 +162,13 @@
 		<!-- Foreign key columns -->
 
 		<column name="companyId" type="long" />
-		<column name="userId" type="long"></column>
-		<column name="userName" type="String"></column>
+		<column name="groupId" type="long"/>
+		<column name="userId" type="long"/>
+		<column name="userName" type="String"/>
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
 		
 		<!-- Other fields -->
-		
 		<column name="name" type="String" localized="true"/>
 		
 		<!-- Order -->
@@ -142,6 +177,17 @@
 		</order>
 
 		<!-- Finder methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
 
 	</entity>
+		<exceptions>
+		<exception>RoomBookingDuration</exception>
+		<exception>RoomBookingEndTime</exception>
+		<exception>RoomBookingStartTime</exception>
+		<exception>RoomBookingTitle</exception>
+		<exception>RoomName</exception>
+		<exception>RequiredRoom</exception>
+	</exceptions>
 </service-builder>

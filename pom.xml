@@ -45,4 +45,10 @@
 		<module>Room-Booking-portlet</module>
 		<module>Room-Booking-portlet-service</module>
 	</modules>
+	<profiles>
+		<profile>
+			<id>Dev62CE</id>
+			<activation></activation>
+		</profile>
+	</profiles>
 </project>

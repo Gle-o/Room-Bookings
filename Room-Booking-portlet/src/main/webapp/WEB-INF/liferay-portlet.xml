@@ -5,8 +5,48 @@
 	<portlet>
 		<portlet-name>Room-Booking</portlet-name>
 		<icon>/icon.png</icon>
+		<control-panel-entry-category>site_administration.content</control-panel-entry-category>
+		<css-class-wrapper>portlet-room-booking-portlet</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+	<portlet>
+		<portlet-name>equipement-type</portlet-name>
+		<icon>/icon.png</icon>
+		<css-class-wrapper>equipement-type-portlet</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+	<portlet>
+		<portlet-name>equipement</portlet-name>
+		<icon>/icon.png</icon>
+		<css-class-wrapper>equipement-portlet</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+	<portlet>
+		<portlet-name>room</portlet-name>
+		<icon>/icon.png</icon>
+		<css-class-wrapper>room-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>management</portlet-name>
+		<icon>/icon.png</icon>
+		<control-panel-entry-category>
+			site_administration.content
+		</control-panel-entry-category>
+		<control-panel-entry-weight>1.5</control-panel-entry-weight>
+		<css-class-wrapper>management-portlet</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+		<system>true</system>
+	</portlet>
+	<portlet>
+		<portlet-name>booking</portlet-name>
+		<icon>/icon.png</icon>
+		<preferences-unique-per-layout>false</preferences-unique-per-layout>
+		<preferences-owned-by-group>true</preferences-owned-by-group>
 		<header-portlet-css>/css/main.css</header-portlet-css>
-		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<header-portlet-javascript>/js/components.js</header-portlet-javascript>
+		<header-portlet-javascript>/js/javascript.js</header-portlet-javascript>
+		<css-class-wrapper>booking-portlet</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

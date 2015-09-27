@@ -7,13 +7,14 @@
 			<access>PROPERTY</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<mapped-superclass class="com.glenoir.plugins.model.impl.EquipmentModelImpl">
+	<mapped-superclass class="com.zenixia.plugins.model.impl.EquipmentModelImpl">
 		<attributes>
 			<id name="equipmentId" />
 			<basic name="uuid">
 				<column name="UUID_" />
 			</basic>
 			<basic name="companyId" />
+			<basic name="groupId" />
 			<basic name="userId" />
 			<basic name="userName" />
 			<basic name="createDate">
@@ -22,9 +23,10 @@
 			<basic name="modifiedDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-			<basic name="equipmentTypeId" />
 			<basic name="name" />
 			<basic name="reference" />
+			<basic name="equipmentTypeId" />
+			<basic name="roomId" />
 			<transient name="modelAttributes" />
 			<transient name="nameCurrentLanguageId" />
 			<transient name="nameMap" />
@@ -33,13 +35,14 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<mapped-superclass class="com.glenoir.plugins.model.impl.EquipmentTypeModelImpl">
+	<mapped-superclass class="com.zenixia.plugins.model.impl.EquipmentTypeModelImpl">
 		<attributes>
 			<id name="equipmentTypeId" />
 			<basic name="uuid">
 				<column name="UUID_" />
 			</basic>
 			<basic name="companyId" />
+			<basic name="groupId" />
 			<basic name="userId" />
 			<basic name="userName" />
 			<basic name="createDate">
@@ -57,13 +60,14 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<mapped-superclass class="com.glenoir.plugins.model.impl.RoomModelImpl">
+	<mapped-superclass class="com.zenixia.plugins.model.impl.RoomModelImpl">
 		<attributes>
 			<id name="roomId" />
 			<basic name="uuid">
 				<column name="UUID_" />
 			</basic>
 			<basic name="companyId" />
+			<basic name="groupId" />
 			<basic name="userId" />
 			<basic name="userName" />
 			<basic name="createDate">
@@ -86,7 +90,7 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<mapped-superclass class="com.glenoir.plugins.model.impl.RoomBookingModelImpl">
+	<mapped-superclass class="com.zenixia.plugins.model.impl.RoomBookingModelImpl">
 		<attributes>
 			<id name="roomBookingId" />
 			<basic name="uuid">
@@ -103,6 +107,7 @@
 			<basic name="userId" />
 			<basic name="userName" />
 			<basic name="roomId" />
+			<basic name="vEventUid" />
 			<basic name="title" />
 			<basic name="description" />
 			<basic name="startTime" />
@@ -119,6 +124,7 @@
 			<basic name="statusDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<transient name="VEventUid" />
 			<transient name="descriptionCurrentLanguageId" />
 			<transient name="descriptionMap" />
 			<transient name="modelAttributes" />
@@ -130,19 +136,24 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<entity class="com.glenoir.plugins.model.impl.EquipmentImpl" name="Equipment">
+	<entity class="com.zenixia.plugins.model.impl.EquipmentImpl" name="Equipment">
 		<table name="RoomBooking_Equipment" />
 		<attributes />
 	</entity>
-	<entity class="com.glenoir.plugins.model.impl.EquipmentTypeImpl" name="EquipmentType">
+	<entity class="com.zenixia.plugins.model.impl.EquipmentTypeImpl" name="EquipmentType">
 		<table name="RoomBooking_EquipmentType" />
-		<attributes />
+		<attributes>
+			<transient name="typesLeftList" />
+			<transient name="typesRightList" />
+		</attributes>
 	</entity>
-	<entity class="com.glenoir.plugins.model.impl.RoomImpl" name="Room">
+	<entity class="com.zenixia.plugins.model.impl.RoomImpl" name="Room">
 		<table name="RoomBooking_Room" />
-		<attributes />
+		<attributes>
+			<transient name="currentEquipementIds" />
+		</attributes>
 	</entity>
-	<entity class="com.glenoir.plugins.model.impl.RoomBookingImpl" name="RoomBooking">
+	<entity class="com.zenixia.plugins.model.impl.RoomBookingImpl" name="RoomBooking">
 		<table name="RoomBooking_RoomBooking" />
 		<attributes />
 	</entity>

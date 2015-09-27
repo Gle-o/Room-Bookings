@@ -4,5 +4,10 @@
 <display>
 	<category name="category.sample">
 		<portlet id="Room-Booking" />
+		<portlet id="equipement-type"/>
+		<portlet id="equipement"/>
+		<portlet id="room"/>
+		<portlet id="management"/>
+		<portlet id="booking"/>
 	</category>
 </display>

@@ -2,19 +2,22 @@ create table RoomBooking_Equipment (
 	uuid_ VARCHAR(75) null,
 	equipmentId LONG not null primary key,
 	companyId LONG,
+	groupId LONG,
 	userId LONG,
 	userName VARCHAR(75) null,
 	createDate DATE null,
 	modifiedDate DATE null,
-	equipmentTypeId LONG,
 	name STRING null,
-	reference VARCHAR(75) null
+	reference VARCHAR(75) null,
+	equipmentTypeId LONG,
+	roomId LONG
 );
 
 create table RoomBooking_EquipmentType (
 	uuid_ VARCHAR(75) null,
 	equipmentTypeId LONG not null primary key,
 	companyId LONG,
+	groupId LONG,
 	userId LONG,
 	userName VARCHAR(75) null,
 	createDate DATE null,
@@ -26,6 +29,7 @@ create table RoomBooking_Room (
 	uuid_ VARCHAR(75) null,
 	roomId LONG not null primary key,
 	companyId LONG,
+	groupId LONG,
 	userId LONG,
 	userName VARCHAR(75) null,
 	createDate DATE null,
@@ -46,6 +50,7 @@ create table RoomBooking_RoomBooking (
 	userId LONG,
 	userName VARCHAR(75) null,
 	roomId LONG,
+	vEventUid VARCHAR(75) null,
 	title STRING null,
 	description STRING null,
 	startTime LONG,

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<bean id="com.glenoir.plugins.service.EquipmentLocalService" class="com.glenoir.plugins.service.impl.EquipmentLocalServiceImpl" />
-	<bean id="com.glenoir.plugins.service.EquipmentService" class="com.glenoir.plugins.service.impl.EquipmentServiceImpl" />
-	<bean id="com.glenoir.plugins.service.persistence.EquipmentPersistence" class="com.glenoir.plugins.service.persistence.EquipmentPersistenceImpl" parent="basePersistence" />
-	<bean id="com.glenoir.plugins.service.EquipmentTypeLocalService" class="com.glenoir.plugins.service.impl.EquipmentTypeLocalServiceImpl" />
-	<bean id="com.glenoir.plugins.service.EquipmentTypeService" class="com.glenoir.plugins.service.impl.EquipmentTypeServiceImpl" />
-	<bean id="com.glenoir.plugins.service.persistence.EquipmentTypePersistence" class="com.glenoir.plugins.service.persistence.EquipmentTypePersistenceImpl" parent="basePersistence" />
-	<bean id="com.glenoir.plugins.service.RoomLocalService" class="com.glenoir.plugins.service.impl.RoomLocalServiceImpl" />
-	<bean id="com.glenoir.plugins.service.RoomService" class="com.glenoir.plugins.service.impl.RoomServiceImpl" />
-	<bean id="com.glenoir.plugins.service.persistence.RoomPersistence" class="com.glenoir.plugins.service.persistence.RoomPersistenceImpl" parent="basePersistence" />
-	<bean id="com.glenoir.plugins.service.RoomBookingLocalService" class="com.glenoir.plugins.service.impl.RoomBookingLocalServiceImpl" />
-	<bean id="com.glenoir.plugins.service.RoomBookingService" class="com.glenoir.plugins.service.impl.RoomBookingServiceImpl" />
-	<bean id="com.glenoir.plugins.service.persistence.RoomBookingPersistence" class="com.glenoir.plugins.service.persistence.RoomBookingPersistenceImpl" parent="basePersistence" />
+	<bean id="com.zenixia.plugins.service.EquipmentLocalService" class="com.zenixia.plugins.service.impl.EquipmentLocalServiceImpl" />
+	<bean id="com.zenixia.plugins.service.EquipmentService" class="com.zenixia.plugins.service.impl.EquipmentServiceImpl" />
+	<bean id="com.zenixia.plugins.service.persistence.EquipmentPersistence" class="com.zenixia.plugins.service.persistence.EquipmentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.zenixia.plugins.service.EquipmentTypeLocalService" class="com.zenixia.plugins.service.impl.EquipmentTypeLocalServiceImpl" />
+	<bean id="com.zenixia.plugins.service.EquipmentTypeService" class="com.zenixia.plugins.service.impl.EquipmentTypeServiceImpl" />
+	<bean id="com.zenixia.plugins.service.persistence.EquipmentTypePersistence" class="com.zenixia.plugins.service.persistence.EquipmentTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.zenixia.plugins.service.RoomLocalService" class="com.zenixia.plugins.service.impl.RoomLocalServiceImpl" />
+	<bean id="com.zenixia.plugins.service.RoomService" class="com.zenixia.plugins.service.impl.RoomServiceImpl" />
+	<bean id="com.zenixia.plugins.service.persistence.RoomPersistence" class="com.zenixia.plugins.service.persistence.RoomPersistenceImpl" parent="basePersistence" />
+	<bean id="com.zenixia.plugins.service.RoomBookingLocalService" class="com.zenixia.plugins.service.impl.RoomBookingLocalServiceImpl" />
+	<bean id="com.zenixia.plugins.service.RoomBookingService" class="com.zenixia.plugins.service.impl.RoomBookingServiceImpl" />
+	<bean id="com.zenixia.plugins.service.persistence.RoomBookingPersistence" class="com.zenixia.plugins.service.persistence.RoomBookingPersistenceImpl" parent="basePersistence" />
 </beans>
